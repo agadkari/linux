@@ -2814,6 +2814,13 @@ static struct platform_device bf5xx_adau1701_device = {
 };
 #endif
 
+#if defined(CONFIG_SND_SOC_BFIN_EVAL_ADAU1X61) || \
+	defined(CONFIG_SND_SOC_BFIN_EVAL_ADAU1X61_MODULE)
+static struct platform_device bf5xx_adau1x61_device = {
+	.name = "bfin-eval-adau1x61",
+};
+#endif
+
 static struct platform_device *stamp_devices[] __initdata = {
 
 	&bfin_dpmc,
@@ -3005,6 +3012,10 @@ static struct platform_device *stamp_devices[] __initdata = {
 #if defined(CONFIG_SND_SOC_BFIN_EVAL_ADAV80X) || \
 	defined(CONFIG_SND_SOC_BFIN_EVAL_ADAV80X_MODULE)
 	&bfin_eval_adav801_device,
+#endif
+#if defined(CONFIG_SND_SOC_BFIN_EVAL_ADAU1X61) || \
+	defined(CONFIG_SND_SOC_BFIN_EVAL_ADAU1X61_MODULE)
+	&bf5xx_adau1x61_device,
 #endif
 };
 
