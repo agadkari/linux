@@ -173,7 +173,6 @@ struct ehci_hcd {			/* one per controller */
 	unsigned long		resuming_ports;		/* which ports have
 			started to resume */
 
-#ifdef CONFIG_USB_XUSBPS_OTG
 	/*
 	 * OTG controllers and transceivers need software interaction;
 	 * other external transceivers should be software-transparent
