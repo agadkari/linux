@@ -77,6 +77,11 @@ static const struct of_device_id matches __initconst = {
 	.name = "soc",
 };
 
+static const __initconst struct of_device_id clk_match[] = {
+	{ .compatible = "fixed-clock", .data = of_fixed_clk_setup, },
+	{ /* sentinel */ }
+};
+
 /**
  * zynq_clock_init() - Clock initalization
  *
@@ -371,4 +376,6 @@ void __init zynq_clock_init(void)
 	 * 		&aperclk_lock);
 	 * zynq_clkdev_add(NULL, "SMC_APER", clk);
 	 */
+
+	of_clk_init(clk_match);
 }
